@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Order;
 use App\Models\Product;
+use App\Events\OrderPlaced;
 use Illuminate\Http\Request;
 
 class OrderController extends Controller
@@ -47,6 +48,7 @@ class OrderController extends Controller
 
         // Update order total amount
         $order->update(['total_amount' => $totalAmount]);
+        event(new OrderPlaced($order));
 
         return response()->json($order, 201);
     }
