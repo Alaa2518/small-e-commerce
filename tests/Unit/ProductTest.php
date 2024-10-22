@@ -4,12 +4,18 @@ namespace Tests\Unit;
 
 use Tests\TestCase;
 use App\Models\Product;
+use Illuminate\Support\Facades\Config;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class ProductTest extends TestCase
 {
     use RefreshDatabase;
+
+    protected function setUp(): void
+    {
+        parent::setUp();
+    }
 
     /** @test */
     public function test_can_store_a_product()

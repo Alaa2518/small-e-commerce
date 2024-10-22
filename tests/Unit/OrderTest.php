@@ -6,6 +6,7 @@ use Tests\TestCase;
 use App\Models\User;
 use App\Models\Order;
 use App\Models\Product;
+use Illuminate\Support\Facades\Config;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
@@ -13,7 +14,13 @@ class OrderTest extends TestCase
 {
     use RefreshDatabase;
     private $user ;
+
+    protected function setUp(): void
+    {
+        parent::setUp();
+    }
     public function __construct(){
+
         $this->user = User::factory()->create();
     }
 

@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\API;
 
 use App\Models\Order;
 use App\Models\Product;
 use App\Events\OrderPlaced;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class OrderController extends Controller
 {
